@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">SMSApp</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="contacts">Contacts</string>
+    <string name="messages">Messages</string>
+    <string name="contact_name">Contact Name</string>
+    <string name="notes_description">Notes Description</string>
+</resources>

@@ -39,17 +39,6 @@ class ContactDetails : AppCompatActivity() {
 
     }
 
-    fun generateOTP(start: Int, end: Int): Int {
-        require(start <= end) { "Illegal Argument" }
-        return (start..end).random()
-    }
-
-    fun getOTP() {
-        val start = 1
-        val end = 9
-
-        for (i in 1..6) println(generateOTP(start, end))
-    }
 
     private fun sendMessage(){
         val intent = Intent(this, SendMessage()::class.java)

@@ -10,4 +10,5 @@
     <string name="sms_manager_app">SMS Manager App</string>
     <string name="enter_phone_number">Enter phone number</string>
     <string name="enter_message">Enter Message</string>
+    <string name="textview">TextView</string>
 </resources>

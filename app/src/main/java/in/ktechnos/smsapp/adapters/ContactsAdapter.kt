@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 
-class ContactsAdapter : ListAdapter<NoteEntity, ContactsAdapter.MyHolder>(DiffutilCallBack) {
+class ContactsAdapter(private val onClick: (NoteEntity) -> Unit) : ListAdapter<NoteEntity, ContactsAdapter.MyHolder>(DiffutilCallBack) {
 
     object DiffutilCallBack: DiffUtil.ItemCallback<NoteEntity>(){
         override fun areItemsTheSame(oldItem: NoteEntity, newItem: NoteEntity): Boolean {
@@ -20,15 +20,27 @@ class ContactsAdapter : ListAdapter<NoteEntity, ContactsAdapter.MyHolder>(Diffut
         }
 
     }
-    inner class MyHolder(private val binding: NotesRowBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class MyHolder(private val binding: NotesRowBinding,val onClick: (NoteEntity) -> Unit) : RecyclerView.ViewHolder(binding.root) {
+
+        private var currentFlower: NoteEntity? = null
+
+        init {
+            itemView.setOnClickListener {
+                currentFlower?.let {
+                    onClick(it)
+                }
+            }
+        }
+
         fun bind(post: NoteEntity?) {
+            currentFlower = post
             binding.tvTitle.text = post?.noteTitle
-            binding.tvDescription.text = post?.noteDescription
+            //binding.tvDescription.text = post?.noteDescription
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyHolder {
-        return MyHolder(NotesRowBinding.inflate(LayoutInflater.from(parent.context),parent,false))
+        return MyHolder(NotesRowBinding.inflate(LayoutInflater.from(parent.context),parent,false),onClick)
     }
 
     override fun onBindViewHolder(holder: MyHolder, position: Int) {

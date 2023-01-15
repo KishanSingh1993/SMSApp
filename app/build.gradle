@@ -84,5 +84,11 @@ dependencies {
     kapt "com.android.databinding:compiler:3.2.0-alpha10"
     kapt "androidx.databinding:databinding-common:7.3.1"
 
+    //Circular Image View
+
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+    //implementation 'com.nexmo.android:client-sdk:4.0.0'
+
 
 }

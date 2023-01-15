@@ -6,4 +6,8 @@
     <string name="messages">Messages</string>
     <string name="contact_name">Contact Name</string>
     <string name="notes_description">Notes Description</string>
+    <string name="send_message">Send Message</string>
+    <string name="sms_manager_app">SMS Manager App</string>
+    <string name="enter_phone_number">Enter phone number</string>
+    <string name="enter_message">Enter Message</string>
 </resources>

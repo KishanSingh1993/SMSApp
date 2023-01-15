@@ -1,6 +1,8 @@
 package `in`.ktechnos.smsapp.ui
 
 import `in`.ktechnos.smsapp.R
+import `in`.ktechnos.smsapp.data.local.NoteEntity
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.NavController
@@ -34,4 +36,6 @@ class MainActivity : AppCompatActivity() {
     override fun onSupportNavigateUp(): Boolean {
         return navController.navigateUp() || super.onSupportNavigateUp()
     }
+
+
 }
